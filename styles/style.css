@@ -1,0 +1,39 @@
+* {
+    //font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+}
+
+body {
+    background: #fff;
+    color: #222;
+    display: flex;
+    justify-content: center;
+    font-family: zillaslab,palatino,"Palatino Linotype",serif;
+}
+
+.container {
+    width: 70%;
+    padding-top: 50pt;
+}
+
+header {
+    height: 50pt;
+    width: 70%;
+}
+
+    header .logo {
+        position: relative;
+        color: #fff;
+        background: rgb(216, 57, 57);
+        height: 100pt;
+        width: 100pt;
+        font-size: 25pt;
+        font-weight: 500;
+        top: -50pt;
+    }
+
+        header .logo .name {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            bottom: 0;
+        }
