@@ -98,3 +98,21 @@ header {
                 border-bottom: 1px solid;
                 color: #555;
             }
+            header .menu .button.download {
+                border-bottom: 2px solid rgb(216, 57, 57);
+                color: #fff;
+                background: rgb(216, 57, 57);
+                padding: 0 10pt;
+            }
+            header .menu .button.download:hover{
+                background: rgb(168, 54, 54);
+            }
+
+.container .content_container {
+    position: relative;
+    width: 100%;
+    color: #333;
+}
+.container .content_container p{
+    line-height: 10pt;
+}
