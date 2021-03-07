@@ -3,6 +3,7 @@
 }
 
 body {
+    margin: 0;
     background: #fff;
     color: #222;
     display: flex;
@@ -18,22 +19,82 @@ body {
 header {
     height: 50pt;
     width: 70%;
+    position: relative;
+    top: -70pt;
 }
 
     header .logo {
+        user-select: none;
+        cursor: pointer;
+        overflow: hidden;
         position: relative;
         color: #fff;
         background: rgb(216, 57, 57);
         height: 100pt;
-        width: 100pt;
+        width: 200px;
         font-size: 25pt;
         font-weight: 500;
-        top: -50pt;
+        bottom: 20pt;
+        transition: .4s cubic-bezier(.68, -.55, .265, 1.55);
     }
+
+        header .logo:hover {
+            bottom: 0pt;
+        }
 
         header .logo .name {
             position: absolute;
             width: 100%;
-            text-align: center;
-            bottom: 0;
+            left: 55pt;
+            bottom: 7pt;
         }
+
+        header .logo:after {
+            content: "";
+            background: #fff;
+            position: absolute;
+            width: 125px;
+            height: 12px;
+            bottom: 0;
+            right: 0;
+        }
+
+        header .logo:before {
+            content: "";
+            background: #fff;
+            position: absolute;
+            width: 16px;
+            height: 22px;
+            bottom: 0;
+            left: 0;
+        }
+
+        header .logo img {
+            user-select: none;
+            position: absolute;
+            z-index: 2;
+            left: 12pt;
+            bottom: -8pt;
+            width: 60px;
+            z-index: 2;
+        }
+
+    header .menu {
+        position: absolute;
+        bottom: -20pt;
+        left: 150pt;
+        width: 100%;
+    }
+
+        header .menu .button {
+            float: left;
+            margin-left: 20pt;
+            cursor: pointer;
+            border-bottom: 1px solid #fff;
+            font-weight: 600;
+        }
+
+            header .menu .button:hover {
+                border-bottom: 1px solid;
+                color: #555;
+            }
