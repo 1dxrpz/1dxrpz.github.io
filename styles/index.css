@@ -1,0 +1,40 @@
+@import "fonts.css";
+@import "dxbootstrap.css";
+
+* {
+    //font-family: 'Open Sans', sans-serif;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+}
+body {
+    margin: 0;
+    background: #fafafa;
+    color: #222;
+}
+header {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    display: inline-flex;
+    align-items: flex-end;
+    padding: 0 40px 20px 40px;
+    background: #fafafa;
+    transition: .2s ease-in-out;
+}
+header[data-shadow="false"] {
+    box-shadow: none;
+}
+header[data-shadow="true"] {
+    box-shadow: 0 0 15px rgba(0, 0, 0, .07);
+}
+main {
+    padding: 12px 48px 12px 48px;
+    margin-top: 120px;
+}
+footer {
+    width: 100%;
+    height: 200px;
+    background: #eeeeee;
+    margin-top: 120px;
+    display: inline-flex;
+}
