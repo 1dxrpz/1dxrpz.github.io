@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\source\\repos\\1dxrpz.github.io\\Gibson.Website\\Gibson.Website.csproj": {}
+    "C:\\Users\\HP\\source\\repos\\1dxrpz.github.io\\Gibson.Website.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\source\\repos\\1dxrpz.github.io\\Gibson.Website\\Gibson.Website.csproj": {
+    "C:\\Users\\HP\\source\\repos\\1dxrpz.github.io\\Gibson.Website.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\source\\repos\\1dxrpz.github.io\\Gibson.Website\\Gibson.Website.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\source\\repos\\1dxrpz.github.io\\Gibson.Website.csproj",
         "projectName": "Gibson.Website",
-        "projectPath": "C:\\Users\\HP\\source\\repos\\1dxrpz.github.io\\Gibson.Website\\Gibson.Website.csproj",
+        "projectPath": "C:\\Users\\HP\\source\\repos\\1dxrpz.github.io\\Gibson.Website.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\source\\repos\\1dxrpz.github.io\\Gibson.Website\\obj\\",
+        "outputPath": "C:\\Users\\HP\\source\\repos\\1dxrpz.github.io\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
