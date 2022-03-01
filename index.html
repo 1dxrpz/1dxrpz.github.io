@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<script src="https://kit.fontawesome.com/cf2e1e35d6.js"></script>
+	<title>Portfolio</title>
 	<link rel="stylesheet" type="text/css" href="styles/index.css">
 	<link rel="stylesheet" type="text/css" href="styles/loader.css">
 </head>
@@ -22,6 +23,15 @@
 		<nav data-oncontent="false">
 			<span>Scaphoide</span>
 			<span class="right">
+				<a href="https://github.com/1dxrpz" class="bubble_button" data-content="Github">
+					<i class="fa fa-brands fa-github"></i>
+				</a>
+				<a href="https://codepen.io/Derps" class="bubble_button" data-content="Codepen">
+					<i class="fa fa-brands fa-codepen"></i>
+				</a>
+				<a href="https://www.behance.net/scaphoide" class="bubble_button" data-content="Behance">
+					<i class="fa fa-brands fa-behance"></i>
+				</a>
 				<a onclick="ScrollTo(0)" class="bubble_button" data-content="Home">Home</a>
 				<a onclick="ScrollTo('#content')" class="bubble_button" data-content="About">About</a>
 				<a onclick="ChangePage('pages/projects.html')" class="bubble_button" data-content="Projects">Projects</a>
@@ -41,10 +51,36 @@
 		<img src="images/6.png">
 	</div>
 	<div id="content">
-		<div id=""></div>
+		<div class="about">
+			<div class="topic">Me, myself & I</div>
+			<div class="info">My name is <span>Linar</span> a.k.a Kenneth Gibson, dxrpz and so on and on and on... <br> I live in gorgeous city <span>Kazan</span>; 2nd grade student of computer engeneering, Kazan University<br>My <span>goal</span> is to <span>become</span> professional programmer</div>
+			<div class="topic">Skills</div>
+			<div class="info">
+				<span>Frontend</span>
+				<div class="valuebox" data-name="CSS" data-value="90"></div>
+				<div class="valuebox" data-name="HTML" data-value="90"></div>
+				<div class="valuebox" data-name="JS" data-value="60"></div>
+				<span>Backend</span>
+				<div class="valuebox" data-name="C#" data-value="70"></div>
+				<div class="valuebox" data-name="SQL" data-value="40"></div>
+				<span>Frameworks</span>
+				<div class="valuebox" data-name="ASP .net" data-value="40"></div>
+				<span>Languages</span>
+				<div class="valuebox" data-name="Russian" data-value="100"></div>
+				<div class="valuebox" data-name="English" data-value="70"></div>
+			</div>
+			<div class="topic">What I like?</div>
+			<div class="info">
+				Programming is my work/leisure & hobby<br>
+				My favourite programming language C# & first JS<br>
+				I spent free-time making 2D game engine
+			</div>
+		</div>
+		<footer></footer>
 	</div>
 	<script type="text/javascript" src="scripts/index.js"></script>
 	<script type="text/javascript" src="scripts/loader.js"></script>
 	<script type="text/javascript" src="scripts/parallax.js"></script>
+
 </body>
 </html>

@@ -10,7 +10,26 @@ body {
 #content {
 	width: 100%;
 	position: relative;
-	height: 1000px;
 	background: #c7d8da;
-	//top: -5px;
+}
+.about{
+	padding: 64px;
+	padding-left: 256px;
+}
+.about .topic {
+	font-family: 'Rozha One', serif;
+	font-size: 48pt;
+	color: #333;
+	margin-top: 64px;
+}
+.info {
+	font-family: Montserrat, sans-serif;
+	font-size: 18pt;
+	color: #444;
+}
+.info span {
+	font-weight: 700;
+}
+.info {
+
 }
