@@ -1,0 +1,35 @@
+@import "fonts.css";
+@import "parallax.css";
+@import "bootstrap.css";
+
+body {
+	margin: 0;
+	background: #6ab0da;
+	overflow: hidden;
+}
+#content {
+	width: 100%;
+	position: relative;
+	background: #c7d8da;
+}
+.about{
+	padding: 64px;
+	padding-left: 256px;
+}
+.about .topic {
+	font-family: 'Rozha One', serif;
+	font-size: 48pt;
+	color: #333;
+	margin-top: 64px;
+}
+.info {
+	font-family: Montserrat, sans-serif;
+	font-size: 18pt;
+	color: #444;
+}
+.info span {
+	font-weight: 700;
+}
+.info {
+
+}

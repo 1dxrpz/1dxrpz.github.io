@@ -1,0 +1,40 @@
+.images {
+	width: 100%;
+	position: relative;
+	display: flex;
+}
+.images .item {
+	width: 100%;
+	font-size: 32pt;
+	font-weight: 600;
+	color: #fff;
+	text-align: center;
+	padding: 20% 50px;
+	box-sizing: border-box;
+	font-family: 'Rozha One', serif;
+}
+.images .item span {
+	display: block;
+	width: 100%;
+	position: relative;
+}
+.images .item span.topic {
+	font-size: 132pt;
+	line-height: 110px;
+}
+.images .item span.description {
+	font-family: Montserrat, sans-serif;
+	font-size: 18pt;
+	text-transform: uppercase;
+	letter-spacing: 5pt;
+	color: #fff;
+}
+.images img {
+	top: 0;
+	position: relative;
+	width: 100%;
+	image-rendering: pixelated;
+}
+.images .parallax {
+	position: absolute;
+}
