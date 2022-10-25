@@ -256,7 +256,7 @@ function Autocomplete(input) {
 		//let items = searchHistory.items.filter(v => v.includes(input.value));
 
 		$.ajax({
-			url: `https://cors-anywhere.herokuapp.com/https://suggestqueries.google.com/complete/search?client=firefox&q=${v}`,
+			url: `https://cors-anywhere.herokuapp.com/https://suggestqueries.google.com/complete/search?client=firefox&q=${input.value}`,
 			method: 'get',
 			success: function(data){
 				//console.dir(JSON.parse(data)[1]);
