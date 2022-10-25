@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Hello world</title>
+	<title>Google Search</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<script src="https://kit.fontawesome.com/3ee70c58bc.js" crossorigin="anonymous"></script>
 </head>
@@ -194,9 +194,9 @@
 			<div class="label">Search history</div>
 			<button onclick="ClearSearchHistory()">Clear</button>
 		</div>
-		
 	</div>
 </body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script type="text/javascript">
 var searchTab = document.querySelector("#searchTab");
 var searchHistory_container = document.querySelector(".searchHistory_container");
@@ -253,13 +253,31 @@ function Autocomplete(input) {
 	searchHistory_container.innerHTML = "";
 	searchHistory_container.setAttribute("data-visible", visible);
 	if (visible) {
-		let items = searchHistory.items.filter(v => v.includes(input.value));
+		//let items = searchHistory.items.filter(v => v.includes(input.value));
+
+		$.ajax({
+			url: `https://cors-anywhere.herokuapp.com/https://suggestqueries.google.com/complete/search?client=firefox&q=test`,
+			method: 'get',
+			success: function(data){
+				//console.dir(JSON.parse(data)[1]);
+				JSON.parse(data)[1].forEach(v => {
+			    	searchHistory_container.innerHTML += `<div class="search_autocomplete">${v}</div>`;
+			    })
+			},
+			error: function (jqXHR, exception) {
+				console.log(exception);
+			}
+		});
+
+		/*
 	    items.forEach(v => {
 	    	searchHistory_container.innerHTML += `<div class="search_autocomplete">${v}</div>`;
 	    })
+	    
 	    if (items.length == 0) {
 	    	searchHistory_container.innerHTML += `<div class="search_autocomplete">${input.value}</div>`;	
 	    }
+	    */
 	}
 }
 function search(input) {
