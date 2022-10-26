@@ -1,178 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Google Search</title>
+	<title>New tab</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<script src="https://kit.fontawesome.com/3ee70c58bc.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="../styles/search.css">
+	<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
 </head>
-<style type="text/css">
-	@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
-	*{
-		font-family: 'Lato', sans-serif;
-	}
-	body {
-		width: 100vw;
-		height: 100vh;
-		margin: 0;
-		overflow: hidden;
-		background-image: url(https://images.unsplash.com/photo-1611605645802-c21be743c321?w=2070&q=80);
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-	.container {
-		width: 40%;
-		height: 100%;
-		position: relative;
-		padding-top: 500px;
-	}
-	.wrapper {
-		z-index: 2;
-		width: 100%;
-		position: relative;
-	}
-	.dot {
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		z-index: 1;
-		left: 0;
-		top: 0;
-		opacity: .5;
-		background-image: url("../images/pattern.png");
-	}
-	.search_bar {
-		position: relative;
-		z-index: 2;
-		width: 100%;
-		display: flex;
-		border-radius: 10px;
-		background: #111;
-	}
-	#searchTab {
-		z-index: 2;
-		outline: none;
-		width: 100%;
-		height: 35px;
-		font-size: 14pt;
-		background: transparent;
-		border: none;
-		padding: 10px 0 10px 0px;
-		color: #eee;
-		position: relative;
-		box-shadow: 0 10px 10px rgba(0, 0, 0, .25);
-		font-weight: bold;
-	}
-	.searchHistory_container {
-		padding: 10px 30px;
-		width: calc(100% - 60px);
-		max-height: 400px;
-		overflow-y: auto;
-		position: absolute;
-		top: 48px;
-		background: #111;
-		color: #eee;
-		border-radius: 0  0 10px 10px;
-	}
-	.searchHistory_container[data-visible="true"] {
-		z-index: 3;
-		display: block;
-	}
-	.searchHistory_container[data-visible="false"] {
-		display: none;
-	}
-	.icon {
-		position: relative;
-		flex-shrink: 0;
-		width: 50px;
-		height: 55px;
-		user-select: none;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-	.icon img {
-		height: 38%;
-		user-select: none;
-	}
-	.icon i {
-		user-select: none;
-		color: #eee;
-	}
-	#clocks {
-		color: #eee;
-		font-weight: bold;
-		font-size: 64pt;
-		text-transform: uppercase;
-		text-align: center;
-		margin-bottom: 30px;
-		text-shadow: 5px 5px 0px rgba(0, 0, 0, .25); 
-	}
-	#clocks span {
-		font-size: 32pt;
-	}
-	.settings_wrapper {
-		z-index: 2;
-		text-shadow: 5px 5px 10px rgba(0, 0, 0, .25); 
-		position: absolute;
-		top: 10px;
-		right: 10px;
-		width: 50px;
-		height: 50px;
-		color: #eee;
-		font-size: 24pt;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-	.settings {
-		width: auto;
-		padding: 20px 50px 20px 20px;
-		background: red;
-		position: absolute;
-		right: 0;
-		top: 50px;
-		display: none;
-		background: #111;
-		border-radius: 10px;
-		box-shadow: 0 10px 10px rgba(0, 0, 0, .25);
-	}
-	.settings_wrapper .checkbox {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		opacity: 0;
-	}
-	.settings_wrapper .checkbox:checked ~ .settings {
-		display: block;
-	}
-	.settings .label {
-		padding-top: 25px;
-		font-size: 12pt;
-		font-weight: 500;
-	}
-	.settings .header {
-		font-size: 18pt;
-		font-weight: bold;
-	}
-	.search_autocomplete {
-		padding: 5px 10px;
-	}
-	.search_autocomplete:hover {
-		background: rgba(255, 255, 255, .2);
-	}
-</style>
 <body>
 	<div class="dot"></div>
 	<div class="container">
 		<div class="wrapper">
 			<div id="clocks"></div>
 		</div>
-		<div class="wrapper">
-			<div class="search_bar">
+		<div class="wrapper" style="z-index: 99">
+			<div class="search_bar" data-webpage="false">
 				<div class="icon">
 					<img src="../images/google_logo.webp">
 				</div>
@@ -183,6 +30,15 @@
 				<div class="searchHistory_container" data-visible="false"></div>
 			</div>
 		</div>
+		<div class="wrapper">
+			<div class="shortcut_links">
+				<div class="shortcut_links_wrapper">
+				</div>
+				<div class="link newlink" onclick="AddNewLink()">
+					<i class="fa-solid fa-plus"></i>
+				</div>
+			</div>
+		</div>
 	</div>
 	<div class="settings_wrapper">
 		<i class="fa-solid fa-gear"></i>
@@ -191,119 +47,19 @@
 			<div class="header">Settings</div>
 			<div class="label">Background image</div>
 			<input id="inp" type="file">
+			<button onclick="ClearBackgroundImage()">Clear</button>
 			<div class="label">Search history</div>
 			<button onclick="ClearSearchHistory()">Clear</button>
+			<div class="label">Link shortcuts</div>
+			<button onclick="ClearShortcutLinks()">Clear</button>
 		</div>
+	</div>
+	<div class="header_wrapper">
+		<a href="https://yandex.ru/images">Images</a>
+		<a href="https://www.youtube.com">Videos</a>
+		<a href="https://github.com">GitHub</a>
 	</div>
 </body>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script type="text/javascript">
-var searchTab = document.querySelector("#searchTab");
-var searchHistory_container = document.querySelector(".searchHistory_container");
-var clocks = document.querySelector("#clocks");
-var searchHistory = {items:[]};
-
-function readFile() {
-	if (!this.files || !this.files[0]) return;
-	const reader = new FileReader();
-	let imageFile = this.files[0];
-	reader.addEventListener("load", () => {
-		var img = document.createElement("img");
-		img.onload = function (event) {
-			var canvas = document.createElement("canvas");
-			var ctx = canvas.getContext("2d");
-			canvas.width = img.width / 2;
-			canvas.height = img.height / 2;
-			ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-			ctx.mozImageSmoothingEnabled = false;
-			ctx.webkitImageSmoothingEnabled = false;
-			ctx.msImageSmoothingEnabled = false;
-			ctx.imageSmoothingEnabled = false;
-			var dataurl = canvas.toDataURL(imageFile.type);
-
-			document.querySelector("body").style.backgroundImage = `url(${dataurl})`;
-			localStorage.setItem("background", dataurl);
-		}
-		img.src = reader.result;
-	});
-	reader.readAsDataURL(this.files[0]);
-}
-
-document.querySelector("#inp").addEventListener("change", readFile);
-window.onload = () => {
-	clocks.innerHTML = formatAMPM(new Date);
-	searchTab.focus();
-	if (localStorage.getItem("background") == null)
-	{
-		localStorage.setItem("background", "");
-	} else {
-		if (localStorage.getItem("background") == "undefined") {
-			document.querySelector("body").style.backgroundImage = `url(https://images.unsplash.com/photo-1611605645802-c21be743c321?w=2070&q=80)`;
-		}
-		document.querySelector("body").style.backgroundImage = `url(${localStorage.getItem("background")})`;
-	}
-	if (localStorage.getItem("searchHistory") == null) {
-		localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
-	} else {
-		searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
-	}
-}
-function Autocomplete(input) {
-	let visible = input.value.trim().length != 0;
-	searchHistory_container.innerHTML = "";
-	searchHistory_container.setAttribute("data-visible", visible);
-	if (visible) {
-		//let items = searchHistory.items.filter(v => v.includes(input.value));
-
-		$.ajax({
-			url: `https://cors-anywhere.herokuapp.com/https://suggestqueries.google.com/complete/search?client=firefox&q=${input.value}`,
-			method: 'get',
-			success: function(data){
-				//console.dir(JSON.parse(data)[1]);
-				JSON.parse(data)[1].forEach(v => {
-			    	searchHistory_container.innerHTML += `<div class="search_autocomplete">${v}</div>`;
-			    })
-			},
-			error: function (jqXHR, exception) {
-				console.log(exception);
-			}
-		});
-
-		/*
-	    items.forEach(v => {
-	    	searchHistory_container.innerHTML += `<div class="search_autocomplete">${v}</div>`;
-	    })
-	    
-	    if (items.length == 0) {
-	    	searchHistory_container.innerHTML += `<div class="search_autocomplete">${input.value}</div>`;	
-	    }
-	    */
-	}
-}
-function search(input) {
-    if(event.key === 'Enter') {
-        window.location.href = `https://www.google.com/search?q=${input.value.split(' ').join('+')}`;
-        searchHistory.items.push(input.value);
-        localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
-    }
-}
-function ClearSearchHistory() {
-	searchHistory = {items:[]};
-	localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
-}
-function formatAMPM(date) {
-  var hours = date.getHours();
-  var minutes = date.getMinutes();
-  var ampm = hours >= 12 ? 'pm' : 'am';
-  hours = hours % 12;
-  hours = hours ? hours : 12; // the hour '0' should be '12'
-  minutes = minutes < 10 ? '0'+minutes : minutes;
-  var strTime = hours + ':' + minutes + ' ' + `<span>${ampm}</span>`;
-  return strTime;
-}
-
-setInterval(_ => {
-	clocks.innerHTML = formatAMPM(new Date);
-}, 1000);
-</script>
+<script type="text/javascript" src="../scripts/search.js"></script>
 </html>
