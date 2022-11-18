@@ -15,7 +15,7 @@ var engines = {
 		query: 'https://www.google.com/search?q='
 	},
 	duckduckgo: {
-		logo: '../images/duckduckgo.webp',
+		logo: '../images/DuckDuckGo.webp',
 		query: 'https://duckduckgo.com/?q='
 	},
 	yandex: {
