@@ -2,9 +2,27 @@ var searchTab = document.querySelector("#searchTab");
 var search_bar = document.querySelector(".search_bar");
 var searchHistory_container = document.querySelector(".searchHistory_container");
 var shortcut_links_wrapper = document.querySelector(".shortcut_links_wrapper");
+var searchEngineLogo = document.querySelector(".searchEngineLogo");
 var clocks = document.querySelector("#clocks");
 var searchHistory = {items:[]};
 var ShortcutLinks = [];
+var searchEngines = document.querySelectorAll(".searchEngine");
+var searchEngine = "";
+
+var engines = {
+	google: {
+		logo:'../images/google_logo.webp',
+		query: 'https://www.google.com/search?q='
+	},
+	duckduckgo: {
+		logo: '../images/duckduckgo.webp',
+		query: 'https://duckduckgo.com/?q='
+	},
+	yandex: {
+		logo: '../images/yandex.webp',
+		query: 'https://yandex.ru/search/?text='
+	}
+}
 
 const isValidUrl = urlString=> {
 	var urlPattern = new RegExp('^(https?:\\/\\/)?'+ // validate protocol
@@ -63,6 +81,19 @@ window.onload = () => {
 	} else {
 		searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
 	}
+
+	if (localStorage.getItem("searchEngine") == null) {
+		localStorage.setItem("searchEngine", "google");
+	}
+	searchEngine = localStorage.getItem("searchEngine");
+	searchEngines.forEach(v => {
+		v.removeAttribute("selected");
+	});
+	[...searchEngines]
+		.filter(v => v.value == searchEngine)[0]
+		.setAttribute("selected", true);
+	searchEngineLogo.setAttribute("src", engines[searchEngine].logo);
+
 	UpdateLinks();
 }
 
@@ -126,7 +157,7 @@ function search(input) {
     	if (webpage) {
     		window.location.href = input.value.includes("https://") ? input.value : "https://" + input.value;
     	} else {
-    		window.location.href = `https://www.google.com/search?q=${input.value.split(' ').join('+')}`;
+    		window.location.href = `${engines[searchEngine].query}${input.value.split(' ').join('+')}`;
     	}
         searchHistory.items.push(input.value);
         localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
@@ -169,6 +200,11 @@ function UpdateLinks() {
 	ShortcutLinks.forEach(v => {
 		shortcut_links_wrapper.innerHTML += `<a class="link" href="${v.link}" oncontextmenu="RemoveLink(this)"><img alt="icon" src="${v.icon}" /></a>`;
 	});
+}
+function ChangeSearchEngine(v) {
+	localStorage.setItem("searchEngine", v.value);
+	searchEngine = v.value;
+	searchEngineLogo.setAttribute("src", engines[v.value].logo);
 }
 function formatAMPM(date) {
   var hours = date.getHours();

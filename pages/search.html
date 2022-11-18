@@ -21,7 +21,7 @@
 		<div class="wrapper" style="z-index: 99">
 			<div class="search_bar" data-webpage="false">
 				<div class="icon">
-					<img src="../images/google_logo.webp">
+					<img class="searchEngineLogo" src="" alt=".">
 				</div>
 				<input type="" name="" id="searchTab" onkeydown="search(this)" oninput="Autocomplete(this)" placeholder="Search..." autofocus="">
 				<div class="icon">
@@ -52,6 +52,12 @@
 			<button onclick="ClearSearchHistory()">Clear</button>
 			<div class="label">Link shortcuts</div>
 			<button onclick="ClearShortcutLinks()">Clear</button>
+			<div class="label">Search engines</div>
+			<select onchange="ChangeSearchEngine(this)">
+				<option class="searchEngine" value="google">Google</option>
+				<option class="searchEngine" value="duckduckgo">DuckDuckGo</option>
+				<option class="searchEngine" value="yandex">Yandex</option>
+			</select>
 		</div>
 	</div>
 	<div class="header_wrapper">
@@ -61,5 +67,5 @@
 	</div>
 </body>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script type="text/javascript" src="../scripts/search.js"></script>
+<script type="text/javascript" src="../scripts/search.min.js"></script>
 </html>
